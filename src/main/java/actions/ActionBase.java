@@ -98,7 +98,7 @@ public abstract class ActionBase {
     }
 
     /**
-     * URLを構築しリダイレクトを行う
+     * 引数の値を元にURLを構築しリダイレクトを行います。
      * @param action パラメータに設定する値
      * @param command パラメータに設定する値
      * @throws ServletException
