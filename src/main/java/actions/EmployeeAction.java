@@ -66,4 +66,21 @@ public class EmployeeAction extends ActionBase {
 
     }
 
+    /**
+     * 新規登録画面を表示する
+     * リクエストからセッションIDを取得します。
+     * 取得した値は入力フォームの隠し項目として埋め込み、
+     * リクエストの正当性の判定に利用します。
+     * @throws ServletException
+     * @throws IOException
+     */
+    public void entryNew() throws ServletException, IOException {
+
+        putRequestScope(AttributeConst.TOKEN, getTokenId()); //CSRF対策用トークン
+        putRequestScope(AttributeConst.EMPLOYEE, new EmployeeView()); //空の従業員インスタンス
+
+        //新規登録画面を表示
+        forward(ForwardConst.FW_EMP_NEW);
+    }
+
 }
